@@ -1,0 +1,38 @@
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import pages.GoogleSearchPage;
+
+public class BrowserTest {
+	public static void main(String[] args ) throws InterruptedException
+	{
+		
+		//		 System.out.println(projectPath);
+		//		 System.setProperty("webdriver.gecko.driver", projectPath+"/drivers/geckodriver/geckodriver.exe");
+		//		 WebDriver firefoxdriver= new FirefoxDriver();
+		//		 firefoxdriver.get("https://www.amazon.in/");
+		//		 System.setProperty("webdriver.ie.driver", projectPath+"/drivers/iedriver/IEDriverServer.exe");
+		//	     WebDriver iedriver=new InternetExplorerDriver();
+		//	     iedriver.get("https://www.amazon.in/"); 
+		System.out.println("hello selenium");
+		String projectPath= System.getProperty("user.dir");
+		System.setProperty("webdriver.chrome.driver", projectPath+"/drivers/chromedriver/chromedriver.exe");
+		WebDriver driver= new ChromeDriver();
+		driver.get("https://www.google.com/");
+		Thread.sleep(3000);
+		
+		GoogleSearchPage.search_textbox(driver).sendKeys("mobile");
+		GoogleSearchPage.search_button(driver).sendKeys(key.RETURN);
+		List<WebElement> textboxs= driver.findElements(By.xpath("//input"));
+		System.out.println(textboxs.size());
+		
+		
+	}
+
+}

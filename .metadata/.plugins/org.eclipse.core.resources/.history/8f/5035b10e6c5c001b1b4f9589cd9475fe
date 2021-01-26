@@ -1,0 +1,25 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class GoogleSearchPage {
+	static WebElement a=null;
+	static WebElement element =null;
+	By search_textbox=By.name("q");
+	By search_button= By.className("btnK");
+	
+	public void search_textbox_entervalue(String text)
+	{
+		element = driver.findElement(By.name("q"));
+		a=driver.findElement(By.name("q"));;
+		return  a;
+	}
+
+	public static WebElement search_button(WebDriver driver)
+	{
+		a = driver.findElement(By.name("btnK"));
+		return  a;
+	}
+}

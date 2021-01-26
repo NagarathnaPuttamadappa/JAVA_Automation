@@ -1,0 +1,15 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class GoogleSearchPage {
+	
+	public WebElement search_textbox(WebDriver driver)
+	{
+		WebElement text_box = driver.findElement(By.name("q"));
+		return  text_box;
+	}
+
+}
